@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_standard">8dp</dimen>
+    <dimen name="margin_biggest">16dp</dimen>
+
+    <dimen name="padding_image">8dp</dimen>
+    <dimen name="padding_image_mini">16dp</dimen>
+
+    <dimen name="length_minimal">48dp</dimen>
+    <dimen name="length_logo">75dp</dimen>
+
+    <dimen name="height_card">50dp</dimen>
+    <dimen name="margin_card">5dp</dimen>
+    <dimen name="corner_radius_card">10dp</dimen>
+</resources>

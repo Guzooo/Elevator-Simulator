@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ColorTheme" parent="Theme.AppCompat">
+        <item name="colorGPrimary">@color/dark</item>
+        <item name="colorGPrimaryDark">@color/darkDark</item>
+        <item name="colorGPrimaryTranslucent">@color/darkTranslucent</item>
+        <item name="colorGSecondary">@color/light</item>
+        <item name="colorGSecondaryDark">@color/lightDark</item>
+        <item name="colorGAccent">@color/accentDark</item>
+        <item name="colorGAttention">@color/attention</item>
+
+        <item name="android:windowLightStatusBar" >false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+    </style>
+</resources>

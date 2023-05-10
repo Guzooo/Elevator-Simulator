@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="BaseTheme.WithoutActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="BaseTheme" parent="ColorTheme">
+        <item name="colorPrimary">?attr/colorGPrimary</item>
+        <item name="colorPrimaryDark">?attr/colorGPrimary</item>
+        <item name="colorAccent">?attr/colorGAccent</item>
+
+        <item name="android:textViewStyle">@style/TextNormal</item>
+        <item name="android:colorBackground">?attr/colorGPrimary</item>
+    </style>
+
+    <style name="ColorTheme" parent="Theme.AppCompat.Light">
+        <item name="colorGPrimary">@color/light</item>
+        <item name="colorGPrimaryDark">@color/lightDark</item>
+        <item name="colorGPrimaryTranslucent">@color/lightTranslucent</item>
+        <item name="colorGSecondary">@color/dark</item>
+        <item name="colorGSecondaryDark">@color/darkDark</item>
+        <item name="colorGAccent">@color/accent</item>
+        <item name="colorGAttention">@color/attention</item>
+
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+    </style>
+</resources>
