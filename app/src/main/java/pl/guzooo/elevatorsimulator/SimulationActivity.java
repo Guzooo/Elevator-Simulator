@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import pl.guzooo.elevatorsimulator.R;
+import pl.guzooo.elevatorsimulator.readme.ReadmeActivity;
 import pl.guzooo.elevatorsimulator.settings.SettingsActivity;
 
 public class SimulationActivity extends AppCompatActivity {
@@ -61,6 +62,7 @@ public class SimulationActivity extends AppCompatActivity {
     }
 
     private void openReadme(){
-
+        Intent intent = new Intent(this, ReadmeActivity.class);
+        startActivity(intent);
     }
 }
