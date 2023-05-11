@@ -44,7 +44,6 @@ public class ReadmeActivity extends AppCompatActivity {
     private void initialization(){
         refreshLayout = findViewById(R.id.refresh_layout);
         webView = findViewById(R.id.web_view);
-        infoText = findViewById(R.id.info_text);
     }
 
     private void loadInstanceState(Bundle savedState){
