@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AllClickable">
+        <item name="android:minWidth">@dimen/length_minimal</item>
+        <item name="android:minHeight">@dimen/length_minimal</item>
+    </style>
+
+    <style name="CardViewStandard">
+        <item name="android:minHeight">@dimen/height_card</item>
+        <item name="android:layout_margin">@dimen/margin_card</item>
+        <item name="cardCornerRadius">@dimen/corner_radius_card</item>
+        <item name="cardBackgroundColor">?attr/colorGPrimary</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+    </style>
+</resources>

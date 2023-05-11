@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextNormal">
+        <item name="android:textColor">?attr/colorGSecondary</item>
+        <item name="android:textSize">@dimen/text_normal</item>
+    </style>
+
+    <style name="TextNormal.ColorPrimary">
+        <item name="android:textColor">?attr/colorGPrimary</item>
+    </style>
+
+    <style name="TextBold">
+        <item name="android:textSize">@dimen/text_bold</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextTitle">
+        <item name="android:textSize">@dimen/text_title</item>
+    </style>
+
+    <style name="TextDescription">
+        <item name="android:textSize">@dimen/text_description</item>
+        <item name="android:textColor">?attr/colorGSecondaryDark</item>
+    </style>
+</resources>

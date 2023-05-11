@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="play">Play simulation</string>
+    <string name="pause">Pause simulation</string>
+    <string name="info">Readme file</string>
+    <string name="settings">Settings</string>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ClickableImage" parent="AllClickable">
+        <item name="android:layout_width">@dimen/length_minimal</item>
+        <item name="android:layout_height">@dimen/length_minimal</item>
+        <item name="android:padding">@dimen/padding_image</item>
+        <item name="android:tint">?attr/colorGAccent</item>
+        <item name="android:background">?android:attr/actionBarItemBackground</item>
+    </style>
+</resources>

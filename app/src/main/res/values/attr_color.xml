@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="colorGPrimary" format="reference"/>
+    <attr name="colorGPrimaryDark" format="reference"/>
+    <attr name="colorGPrimaryTranslucent" format="reference"/>
+    <attr name="colorGSecondary" format="reference"/>
+    <attr name="colorGSecondaryDark" format="reference"/>
+    <attr name="colorGAccent" format="reference"/>
+    <attr name="colorGAttention" format="reference"/>
+</resources>
