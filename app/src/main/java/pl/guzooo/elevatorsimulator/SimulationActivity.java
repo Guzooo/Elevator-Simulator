@@ -5,11 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.res.ResourcesCompat;
 
+import android.content.Intent;
 import android.graphics.drawable.AnimatedVectorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import pl.guzooo.elevatorsimulator.R;
+import pl.guzooo.elevatorsimulator.settings.SettingsActivity;
 
 public class SimulationActivity extends AppCompatActivity {
 
@@ -52,7 +56,8 @@ public class SimulationActivity extends AppCompatActivity {
     }
 
     private void openSettings(){
-
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
     }
 
     private void openReadme(){

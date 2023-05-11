@@ -3,12 +3,12 @@
     <color name="light">#FFFFFF</color>
     <color name="lightDark">#c9c9c9</color>
     <color name="lightTranslucent">#E6FFFFFF</color>
-    <color name="accent">#E600EA4F</color>
+    <color name="accent">#00EA4F</color>
 
     <color name="dark">#363636</color>
     <color name="darkDark">#6c6c6c</color>
     <color name="darkTranslucent">#E6363636</color>
-    <color name="accentDark">#E6007327</color>
+    <color name="accentDark">#007327</color>
 
     <color name="attention">#FF0000</color>
 </resources>
