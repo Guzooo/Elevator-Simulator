@@ -1,0 +1,187 @@
+<animated-vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+    <aapt:attr name="android:drawable">
+        <vector
+            android:name="vector"
+            android:width="24dp"
+            android:height="24dp"
+            android:viewportWidth="24"
+            android:viewportHeight="24">
+            <group
+                android:name="all"
+                android:pivotX="12"
+                android:pivotY="12">
+                <group
+                    android:name="play_1"
+                    android:pivotX="10"
+                    android:pivotY="12">
+                    <path
+                        android:name="play"
+                        android:pathData="M 7.58 16.89 L 13.35 12.82 C 13.91 12.42 13.91 11.58 13.35 11.19 L 7.58 7.11 C 6.91 6.65 6 7.12 6 7.93 L 6 16.07 C 6 16.88 6.91 17.35 7.58 16.89 Z"
+                        android:fillColor="#000000"/>
+                </group>
+                <group
+                    android:name="kreska_1"
+                    android:pivotX="10"
+                    android:pivotY="12"
+                    android:translateX="7"
+                    android:rotation="90">
+                    <path
+                        android:name="kreska"
+                        android:pathData="M 5 11 C 5.683 11 6.366 11 7.049 11 L 15 11 C 15.55 11 16 11.45 16 12 C 16 12.55 15.55 13 15 13 L 7.049 13 L 7.049 13 C 6.366 13 5.683 13 5 13 C 4.968 13 4.937 12.999 4.906 12.996 C 4.4 12.948 4 12.518 4 12 C 4 11.45 4.45 11 5 11 L 5 11"
+                        android:fillColor="#000000"/>
+                </group>
+            </group>
+        </vector>
+    </aapt:attr>
+    <target android:name="play">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:propertyName="pathData"
+                android:duration="300"
+                android:valueFrom="M 6 7.93 C 6 7.12 6.91 6.65 7.58 7.11 L 13.35 11.19 C 13.627 11.383 13.767 11.685 13.77 11.99 C 13.773 12.302 13.633 12.618 13.35 12.82 L 7.58 16.89 L 7.58 16.89 C 6.91 17.35 6 16.88 6 16.07 C 6 16.057 6 16.044 6 16.031 C 6 14.681 6 13.331 6 11.982 C 6 10.709 6 9.437 6 8.165 L 6 7.93"
+                android:valueTo="M 5 11 C 5.683 11 6.366 11 7.049 11 L 15 11 C 15.55 11 16 11.45 16 12 C 16 12.55 15.55 13 15 13 L 7.049 13 L 7.049 13 C 6.366 13 5.683 13 5 13 C 4.968 13 4.937 12.999 4.906 12.996 C 4.4 12.948 4 12.518 4 12 C 4 11.45 4.45 11 5 11 L 5 11"
+                android:valueType="pathType"
+                android:interpolator="@android:interpolator/fast_out_slow_in"/>
+        </aapt:attr>
+    </target>
+    <target android:name="kreska">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:propertyName="pathData"
+                android:duration="300"
+                android:valueFrom="M 5 11 C 5.683 11 6.366 11 7.049 11 L 15 11 C 15.55 11 16 11.45 16 12 C 16 12.55 15.55 13 15 13 L 7.049 13 L 7.049 13 C 6.366 13 5.683 13 5 13 C 4.968 13 4.937 12.999 4.906 12.996 C 4.4 12.948 4 12.518 4 12 C 4 11.45 4.45 11 5 11 L 5 11"
+                android:valueTo="M 6 7.93 C 6 7.12 6.91 6.65 7.58 7.11 L 13.35 11.19 C 13.627 11.383 13.767 11.685 13.77 11.99 C 13.773 12.302 13.633 12.618 13.35 12.82 L 7.58 16.89 L 7.58 16.89 C 6.91 17.35 6 16.88 6 16.07 C 6 16.057 6 16.044 6 16.031 C 6 14.681 6 13.331 6 11.982 C 6 10.709 6 9.437 6 8.165 L 6 7.93"
+                android:valueType="pathType"
+                android:interpolator="@android:interpolator/fast_out_slow_in"/>
+        </aapt:attr>
+    </target>
+    <target android:name="all">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:propertyName="rotation"
+                android:duration="300"
+                android:valueFrom="0"
+                android:valueTo="-180"
+                android:valueType="floatType"
+                android:interpolator="@android:interpolator/fast_out_slow_in"/>
+        </aapt:attr>
+    </target>
+    <target android:name="play_1">
+        <aapt:attr name="android:animation">
+            <set>
+                <objectAnimator
+                    android:propertyName="scaleY"
+                    android:duration="150"
+                    android:valueFrom="1"
+                    android:valueTo="0.5"
+                    android:valueType="floatType"
+                    android:interpolator="@android:anim/accelerate_decelerate_interpolator"/>
+                <objectAnimator
+                    android:propertyName="scaleX"
+                    android:duration="150"
+                    android:valueFrom="1"
+                    android:valueTo="0.5"
+                    android:valueType="floatType"
+                    android:interpolator="@android:anim/accelerate_decelerate_interpolator"/>
+                <objectAnimator
+                    android:propertyName="scaleY"
+                    android:startOffset="150"
+                    android:duration="150"
+                    android:valueFrom="0.5"
+                    android:valueTo="1"
+                    android:valueType="floatType"
+                    android:interpolator="@android:anim/decelerate_interpolator"/>
+                <objectAnimator
+                    android:propertyName="scaleX"
+                    android:startOffset="150"
+                    android:duration="150"
+                    android:valueFrom="0.5"
+                    android:valueTo="1"
+                    android:valueType="floatType"
+                    android:interpolator="@android:anim/decelerate_interpolator"/>
+                <objectAnimator
+                    android:propertyName="translateX"
+                    android:duration="100"
+                    android:valueFrom="0"
+                    android:valueTo="-6"
+                    android:valueType="floatType"
+                    android:interpolator="@android:anim/accelerate_decelerate_interpolator"/>
+                <objectAnimator
+                    android:propertyName="translateX"
+                    android:startOffset="100"
+                    android:duration="200"
+                    android:valueFrom="-6"
+                    android:valueTo="-3"
+                    android:valueType="floatType"
+                    android:interpolator="@android:anim/decelerate_interpolator"/>
+                <objectAnimator
+                    android:propertyName="rotation"
+                    android:duration="300"
+                    android:valueFrom="0"
+                    android:valueTo="90"
+                    android:valueType="floatType"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"/>
+            </set>
+        </aapt:attr>
+    </target>
+    <target android:name="kreska_1">
+        <aapt:attr name="android:animation">
+            <set>
+                <objectAnimator
+                    android:propertyName="scaleY"
+                    android:duration="150"
+                    android:valueFrom="1"
+                    android:valueTo="0.5"
+                    android:valueType="floatType"
+                    android:interpolator="@android:anim/accelerate_decelerate_interpolator"/>
+                <objectAnimator
+                    android:propertyName="scaleY"
+                    android:startOffset="150"
+                    android:duration="150"
+                    android:valueFrom="0.5"
+                    android:valueTo="1"
+                    android:valueType="floatType"
+                    android:interpolator="@android:anim/decelerate_interpolator"/>
+                <objectAnimator
+                    android:propertyName="scaleX"
+                    android:duration="150"
+                    android:valueFrom="1"
+                    android:valueTo="0.5"
+                    android:valueType="floatType"
+                    android:interpolator="@android:anim/accelerate_decelerate_interpolator"/>
+                <objectAnimator
+                    android:propertyName="scaleX"
+                    android:startOffset="150"
+                    android:duration="150"
+                    android:valueFrom="0.5"
+                    android:valueTo="1"
+                    android:valueType="floatType"
+                    android:interpolator="@android:anim/decelerate_interpolator"/>
+                <objectAnimator
+                    android:propertyName="translateX"
+                    android:duration="100"
+                    android:valueFrom="7"
+                    android:valueTo="10"
+                    android:valueType="floatType"
+                    android:interpolator="@android:anim/accelerate_decelerate_interpolator"/>
+                <objectAnimator
+                    android:propertyName="translateX"
+                    android:startOffset="100"
+                    android:duration="200"
+                    android:valueFrom="10"
+                    android:valueTo="4"
+                    android:valueType="floatType"
+                    android:interpolator="@android:anim/decelerate_interpolator"/>
+                <objectAnimator
+                    android:propertyName="rotation"
+                    android:duration="300"
+                    android:valueFrom="90"
+                    android:valueTo="180"
+                    android:valueType="floatType"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"/>
+            </set>
+        </aapt:attr>
+    </target>
+</animated-vector>

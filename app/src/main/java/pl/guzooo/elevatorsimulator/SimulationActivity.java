@@ -2,17 +2,13 @@ package pl.guzooo.elevatorsimulator;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-import androidx.core.content.res.ResourcesCompat;
 
 import android.content.Intent;
 import android.graphics.drawable.AnimatedVectorDrawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import pl.guzooo.elevatorsimulator.R;
 import pl.guzooo.elevatorsimulator.readme.ReadmeActivity;
 import pl.guzooo.elevatorsimulator.settings.SettingsActivity;
 
@@ -44,16 +40,9 @@ public class SimulationActivity extends AppCompatActivity {
         return true;
     }
 
-    boolean p = false;
     private void togglePlayPause(MenuItem item){
-        AnimatedVectorDrawable anim;
-        if(p)
-            anim = (AnimatedVectorDrawable) ResourcesCompat.getDrawable(getResources(), R.drawable.anim_pause_to_play, null);
-        else
-            anim = (AnimatedVectorDrawable) ResourcesCompat.getDrawable(getResources(), R.drawable.anim_play_to_pause, null);
-        item.setIcon(anim);
+        AnimatedVectorDrawable anim = (AnimatedVectorDrawable) item.getIcon();
         anim.start();
-        p = !p;
     }
 
     private void openSettings(){
