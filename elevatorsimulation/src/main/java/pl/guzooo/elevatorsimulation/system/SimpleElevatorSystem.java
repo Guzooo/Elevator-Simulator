@@ -18,11 +18,17 @@ public class SimpleElevatorSystem implements ElevatorSystem {
         StopInfo stop = new StopInfo(floor ,direction);
         for(int i = 0; i < elevators.size(); i++){
             Elevator e = elevators.get(i);
+            if(reservedElevators.contains(e))
+                continue;
             int iCost = e.getTimeToDestination() * 3 + e.getTimeToFloor(stop);
             if(iCost < cost){
                 cost = iCost;
                 index = i;
             }
+        }
+        if(index == -1) {
+            unallocatedStops.add(stop);
+            return;
         }
         Elevator best = elevators.get(index);
         if(!best.pickup(stop)){

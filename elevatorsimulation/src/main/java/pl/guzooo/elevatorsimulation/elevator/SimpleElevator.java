@@ -40,10 +40,10 @@ public class SimpleElevator implements Elevator {
 
     @Override
     public Integer[] getStatus() {
-        int destinationFloor = getDestinationFloor();
+        int nextFloor = getNextFloor();
         int countOfStops = stops.size();
         int doorIsOpen = stopover > 1 ? 1 : 0;
-        return new Integer[] {id, currentFloor, destinationFloor, countOfStops, doorIsOpen};
+        return new Integer[] {id, currentFloor, nextFloor, countOfStops, doorIsOpen};
     }
 
     @Override
@@ -108,6 +108,12 @@ public class SimpleElevator implements Elevator {
             stops.pollFirst();
             tryTakingBreak();
         }
+    }
+
+    private int getNextFloor(){
+        if(stops.size() == 0 || direction == 0)
+            return currentFloor;
+        return stops.first();
     }
 
     private int getDestinationFloor(){

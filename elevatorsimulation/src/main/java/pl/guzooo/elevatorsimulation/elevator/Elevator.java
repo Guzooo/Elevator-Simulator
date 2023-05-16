@@ -8,7 +8,7 @@ public interface Elevator {
     void update(int currentFloor, int destinationFloor);
 
     /**
-     * @return (elevatorId, currentFloor, destinationFloor, countOfStop, openDoor);
+     * @return (elevatorId, currentFloor, nextFloor, countOfStop, openDoor);
      *          openDoor: 1 - when open; 0 - when close;
      */
     Integer[] getStatus();

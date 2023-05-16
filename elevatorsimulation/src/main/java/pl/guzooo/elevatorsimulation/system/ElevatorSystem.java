@@ -25,7 +25,7 @@ public interface ElevatorSystem {
     void step();
 
     /**
-     * @return (elevatorId, currentFloor, destinationFloor, countOfStop, openDoor);
+     * @return (elevatorId, currentFloor, nextFloor, countOfStop, openDoor);
      *          openDoor: 1 - when open; 0 - when close;
      */
     ArrayList<Integer[]> status();
