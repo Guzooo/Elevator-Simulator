@@ -1,15 +1,31 @@
 package pl.guzooo.elevatorsimulation.system;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import pl.guzooo.elevatorsimulation.elevator.Elevator;
 import pl.guzooo.elevatorsimulation.stop.StopInfo;
 
-public class SimpleElevatorSystem implements ElevatorSystem {
+public class SimpleElevatorSystem implements InitializationByFactory, ElevatorSystem {
 
     ArrayList<Elevator> elevators = new ArrayList<>();
     ArrayList<StopInfo> unallocatedStops = new ArrayList<>();
     ArrayList<Elevator> reservedElevators = new ArrayList<>();
+
+    @Override
+    public void addElevator(ArrayList<Elevator> elevators) {
+        if(elevators.size() > 16) {
+            List<Elevator> list = elevators.subList(0, 15);
+            this.elevators.addAll(list);
+        } else {
+            this.elevators.addAll(elevators);
+        }
+    }
+
+    @Override
+    public ElevatorSystem getSystem() {
+        return this;
+    }
 
     @Override
     public void pickup(int floor, int direction) {

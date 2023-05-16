@@ -8,7 +8,9 @@ import androidx.lifecycle.MutableLiveData;
 import java.util.ArrayList;
 
 import pl.guzooo.elevatorsimulation.system.ElevatorSystem;
+import pl.guzooo.elevatorsimulation.system.FactoryElevatorSystem;
 import pl.guzooo.elevatorsimulation.system.SimpleElevatorSystem;
+import pl.guzooo.elevatorsimulator.settings.SettingManager;
 
 public class SimulationViewModel extends AndroidViewModel {
 
@@ -21,7 +23,7 @@ public class SimulationViewModel extends AndroidViewModel {
     }
 
     public void reset(){
-        system = new SimpleElevatorSystem();
+        system = FactoryElevatorSystem.getElevatorSystem(new SettingManager().setContext(getApplication()));
         status.setValue(system.status());
     }
 

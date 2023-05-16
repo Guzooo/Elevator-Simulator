@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="elevators_title">Windy</string>
+    <string name="simple_elevators_info">Ilość zwykłych windy</string>
 
+    <string name="building_title">Budynek</string>
+    <string name="first_floor_info">Najniższe piętro</string>
+    <string name="count_of_floor_info">Ilość kondygnacji</string>
 </resources>

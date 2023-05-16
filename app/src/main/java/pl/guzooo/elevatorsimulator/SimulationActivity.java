@@ -18,6 +18,7 @@ import pl.guzooo.elevatorsimulator.adapter.FloorAdapter;
 import pl.guzooo.elevatorsimulator.fullscreen.AllInsetsAgent;
 import pl.guzooo.elevatorsimulator.fullscreen.FullScreenUtils;
 import pl.guzooo.elevatorsimulator.readme.ReadmeActivity;
+import pl.guzooo.elevatorsimulator.settings.SettingManager;
 import pl.guzooo.elevatorsimulator.settings.SettingsActivity;
 import pl.guzooo.elevatorsimulator.utils.TextUtils;
 
@@ -86,7 +87,10 @@ public class SimulationActivity extends AppCompatActivity {
 
     private void setReset(){
         View reset = findViewById(R.id.reset_button);
-        reset.setOnClickListener(view -> viewModel.reset());
+        reset.setOnClickListener(view -> {
+            viewModel.reset();
+            setRecyclerView();
+        });
     }
 
     private void setDevInfo(){
@@ -100,7 +104,7 @@ public class SimulationActivity extends AppCompatActivity {
 
     private void setRecyclerView(){
         FloorAdapter.FloorListener listener = getFloorListener();
-        adapter = new FloorAdapter(0, 10, listener); //TODO: z settingu
+        adapter = new FloorAdapter(SettingManager.getFirstFloor(this), SettingManager.getCountOfFloors(this), listener);
         viewModel.getStatus().observe(this, array -> {
             adapter.submitList(array);
         });

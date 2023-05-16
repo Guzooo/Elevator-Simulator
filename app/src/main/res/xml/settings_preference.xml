@@ -1,111 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory
-        app:title="BUDYNEK">
+        app:title="@string/building_title"
+        app:icon="@drawable/ic_building">
 
-        <EditTextPreference
-            app:title="ILOSC PIETER"
-            app:key="0"
-            app:useSimpleSummaryProvider="true"
-            app:defaultValue="10"/>
+        <SeekBarPreference
+            app:title="@string/first_floor_info"
+            app:key="001"
+            app:showSeekBarValue="true"
+            app:min="-20"
+            android:max="10"
+            app:defaultValue="-1"/>
 
-        <EditTextPreference
-            app:title="ILOSC PIETER"
-            app:key="0"
-            app:useSimpleSummaryProvider="true"
-            app:defaultValue="10"/>
+        <SeekBarPreference
+            app:title="@string/count_of_floor_info"
+            app:key="002"
+            app:showSeekBarValue="true"
+            app:min="2"
+            android:max="200"
+            app:defaultValue="12"/>
 
-        <EditTextPreference
-            app:title="ILOSC PIETER"
-            app:key="0"
-            app:useSimpleSummaryProvider="true"
-            app:defaultValue="10"/>
+    </PreferenceCategory>
 
-        <EditTextPreference
-            app:title="ILOSC PIETER"
-            app:key="0"
-            app:useSimpleSummaryProvider="true"
-            app:defaultValue="10"/>
+    <PreferenceCategory
+        app:title="@string/elevators_title"
+        app:icon="@drawable/ic_elevator_second">
 
-        <EditTextPreference
-            app:title="ILOSC PIETER"
-            app:key="0"
-            app:useSimpleSummaryProvider="true"
-            app:defaultValue="10"/>
-
-        <EditTextPreference
-            app:title="ILOSC PIETER"
-            app:key="0"
-            app:useSimpleSummaryProvider="true"
-            app:defaultValue="10"/>
-
-        <EditTextPreference
-            app:title="ILOSC PIETER"
-            app:key="0"
-            app:useSimpleSummaryProvider="true"
-            app:defaultValue="10"/>
-
-        <EditTextPreference
-            app:title="ILOSC PIETER"
-            app:key="0"
-            app:useSimpleSummaryProvider="true"
-            app:defaultValue="10"/>
-
-        <EditTextPreference
-            app:title="ILOSC PIETER"
-            app:key="0"
-            app:useSimpleSummaryProvider="true"
-            app:defaultValue="10"/>
-
-        <EditTextPreference
-            app:title="ILOSC PIETER"
-            app:key="0"
-            app:useSimpleSummaryProvider="true"
-            app:defaultValue="10"/>
-
-        <EditTextPreference
-            app:title="ILOSC PIETER"
-            app:key="0"
-            app:useSimpleSummaryProvider="true"
-            app:defaultValue="10"/>
-
-        <EditTextPreference
-            app:title="ILOSC PIETER"
-            app:key="0"
-            app:useSimpleSummaryProvider="true"
-            app:defaultValue="10"/>
-
-        <EditTextPreference
-            app:title="ILOSC PIETER"
-            app:key="0"
-            app:useSimpleSummaryProvider="true"
-            app:defaultValue="10"/>
-
-        <EditTextPreference
-            app:title="ILOSC PIETER"
-            app:key="0"
-            app:useSimpleSummaryProvider="true"
-            app:defaultValue="10"/>
-
-        <EditTextPreference
-            app:title="ILOSC PIETER"
-            app:key="0"
-            app:useSimpleSummaryProvider="true"
-            app:defaultValue="10"/>
-
-        <EditTextPreference
-            app:title="ILOSC PIETER"
-            app:key="0"
-            app:useSimpleSummaryProvider="true"
-            app:defaultValue="10"/>
-
-        <EditTextPreference
-            app:title="ILOSC PIETER"
-            app:key="0"
-            app:useSimpleSummaryProvider="true"
-            app:defaultValue="10"/>
-
-
+        <SeekBarPreference
+            app:title="@string/simple_elevators_info"
+            app:key="003"
+            app:showSeekBarValue="true"
+            app:min="1"
+            android:max="16"
+            app:defaultValue="2"/>
     </PreferenceCategory>
 </PreferenceScreen>
