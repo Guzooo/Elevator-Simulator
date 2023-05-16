@@ -11,4 +11,6 @@
     <string name="state_title" translatable="false">
         elevatorId >> id\ncurrentFloor >> cF\nnextFloor >> nF\ncountOfStop >> stop\nopenDoor >> door\n\n\tid\t  | \tcF\t\t | \tnF\t\t | \tstop  | door</string>
     <string name="state_data" translatable="false">\n%1$03d | %2$03d | %3$03d | %4$03d | %5$d</string>
+
+    <string name="floor">Floor %1$d</string>
 </resources>

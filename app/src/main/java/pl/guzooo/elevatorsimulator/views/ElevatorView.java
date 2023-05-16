@@ -17,6 +17,7 @@ public class ElevatorView extends FrameLayout {
     ImageView image;
     TextView text;
 
+    int id = 0;
     int direction = 0;
 
     public ElevatorView (Context context, AttributeSet attrs){
@@ -33,8 +34,13 @@ public class ElevatorView extends FrameLayout {
     }
 
     public void setId(int id){
+        this.id = id;
         String idStr = String.valueOf(id);
         text.setText(idStr);
+    }
+
+    public int getId(){
+        return id;
     }
 
     public void animCome(int direction){

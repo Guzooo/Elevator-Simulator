@@ -57,6 +57,7 @@
             app:layout_constraintBottom_toBottomOf="@id/reset_button"/>
 
         <TextView
+            android:visibility="invisible"
             android:id="@+id/dev_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -68,7 +69,6 @@
             style="@style/TextBold"/>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:visibility="invisible"
             android:id="@+id/recycler"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

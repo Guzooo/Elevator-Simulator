@@ -7,4 +7,6 @@
 
     <string name="reset">Resetuj</string>
     <string name="reset_info">Po zmianie ustawień systemu konieczne jest jego zresetowanie</string>
+
+    <string name="floor">Piętro %1$d</string>
 </resources>

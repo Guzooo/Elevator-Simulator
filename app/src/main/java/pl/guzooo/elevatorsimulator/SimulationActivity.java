@@ -3,6 +3,7 @@ package pl.guzooo.elevatorsimulator;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -13,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import pl.guzooo.elevatorsimulator.adapter.FloorAdapter;
 import pl.guzooo.elevatorsimulator.fullscreen.AllInsetsAgent;
 import pl.guzooo.elevatorsimulator.fullscreen.FullScreenUtils;
 import pl.guzooo.elevatorsimulator.readme.ReadmeActivity;
@@ -23,6 +25,7 @@ public class SimulationActivity extends AppCompatActivity {
 
     private SimulationViewModel viewModel;
     private RecyclerView recyclerView;
+    private FloorAdapter adapter;
     private TextView devInfo;
 
     @Override
@@ -96,7 +99,15 @@ public class SimulationActivity extends AppCompatActivity {
     }
 
     private void setRecyclerView(){
+        FloorAdapter.FloorListener listener = getFloorListener();
+        adapter = new FloorAdapter(0, 10, listener); //TODO: z settingu
+        viewModel.getStatus().observe(this, array -> {
+            adapter.submitList(array);
+        });
 
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(adapter);
     }
 
     private void doStep(MenuItem item){
@@ -113,5 +124,19 @@ public class SimulationActivity extends AppCompatActivity {
     private void openReadme(){
         Intent intent = new Intent(this, ReadmeActivity.class);
         startActivity(intent);
+    }
+
+    private FloorAdapter.FloorListener getFloorListener(){
+        return new FloorAdapter.FloorListener() {
+            @Override
+            public void pickup(int floor, int direction) {
+                viewModel.pickup(floor, direction);
+            }
+
+            @Override
+            public void elevator(int id) {
+                //TODO: pokaż szczegoły windy
+            }
+        };
     }
 }
