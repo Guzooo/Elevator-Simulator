@@ -5,6 +5,10 @@
     <string name="info">Readme file</string>
     <string name="settings">Settings</string>
 
-    <string name="state_title" translatable="false">elevatorId | currentFloor | nextFloor | countOfStop | openDoor</string>
-    <string name="state_data" translatable="false">\n%1$-10d | %2$-12d |  %3$-9d | %4$-11d | %5$-8d</string>
+    <string name="reset">Reset</string>
+    <string name="reset_info">After changing the system settings, it is necessary to reset it</string>
+
+    <string name="state_title" translatable="false">
+        elevatorId >> id\ncurrentFloor >> cF\nnextFloor >> nF\ncountOfStop >> stop\nopenDoor >> door\n\n\tid\t  | \tcF\t\t | \tnF\t\t | \tstop  | door</string>
+    <string name="state_data" translatable="false">\n%1$03d | %2$03d | %3$03d | %4$03d | %5$d</string>
 </resources>

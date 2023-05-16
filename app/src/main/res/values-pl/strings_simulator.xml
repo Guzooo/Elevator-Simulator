@@ -4,4 +4,7 @@
     <string name="pause">Zatrzymaj symulacje</string>
     <string name="info">Plik readme</string>
     <string name="settings">Ustawienia</string>
+
+    <string name="reset">Resetuj</string>
+    <string name="reset_info">Po zmianie ustawień systemu konieczne jest jego zresetowanie</string>
 </resources>

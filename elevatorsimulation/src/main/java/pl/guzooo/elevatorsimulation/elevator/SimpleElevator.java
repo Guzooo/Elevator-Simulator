@@ -23,9 +23,10 @@ public class SimpleElevator implements Elevator {
     private int stopover = 0;
 
     @Override
-    public void initialization(int id, int currentFloor) {
+    public Elevator initialization(int id, int currentFloor) {
         this.id = id;
         this.currentFloor = currentFloor;
+        return this;
     }
 
     @Override

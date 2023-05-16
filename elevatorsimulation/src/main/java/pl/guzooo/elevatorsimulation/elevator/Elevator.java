@@ -4,7 +4,7 @@ import pl.guzooo.elevatorsimulation.stop.StopInfo;
 
 public interface Elevator {
 
-    void initialization(int id, int currentFloor);
+    Elevator initialization(int id, int currentFloor);
     void update(int currentFloor, int destinationFloor);
 
     /**

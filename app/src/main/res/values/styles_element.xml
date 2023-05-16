@@ -13,4 +13,9 @@
         <item name="cardBackgroundColor">?attr/colorGPrimary</item>
         <item name="android:foreground">?android:attr/selectableItemBackground</item>
     </style>
+
+    <style name="ButtonStandard">
+        <item name="android:backgroundTint">?attr/colorGPrimaryDark</item>
+        <item name="android:textColor">?attr/colorGSecondary</item>
+    </style>
 </resources>
