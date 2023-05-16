@@ -7,9 +7,13 @@ import android.view.ViewGroup;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 
+import java.util.ArrayList;
+
 import pl.guzooo.elevatorsimulator.R;
 
 public class FloorAdapter extends ListAdapter<Integer[], FloorViewHolder> {
+
+    ArrayList<Integer[]> elevators = new ArrayList<>();
 
     private FloorListener listener;
     private int firstFloor;
@@ -39,15 +43,14 @@ public class FloorAdapter extends ListAdapter<Integer[], FloorViewHolder> {
         holder.setTitle(currentFloor);
         int countOfElevators = super.getItemCount();
         for(int i = 0; i < countOfElevators; i++)
-            holder.setElevators(i, getItem(i));
+            holder.setElevators(i, currentFloor, getItem(i));
         for(int i = countOfElevators; i < 16; i++)
-            holder.setElevators(i, null);
+            holder.setElevators(i, currentFloor, null);
         holder.setFloorListener(currentFloor, listener);
     }
 
-    @Override
-    public int getItemCount() {
-        return countOfFloor;
+    public void refreshElevators(ArrayList<Integer[]> elevators){
+        this.elevators = elevators;
     }
 
     private static DiffUtil.ItemCallback<Integer[]> getDiffCallback() {

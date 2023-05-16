@@ -46,8 +46,8 @@ public class FloorViewHolder extends RecyclerView.ViewHolder {
             });
     }
 
-    public void setElevators(int i, Integer[] tab){
-        if(tab == null) {
+    public void setElevators(int i, int floor, Integer[] tab){
+        if(tab == null || floor != tab[1]) {
             elevators[i].setVisibility(View.INVISIBLE);
             return;
         }

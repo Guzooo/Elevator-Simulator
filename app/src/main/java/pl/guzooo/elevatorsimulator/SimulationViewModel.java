@@ -9,17 +9,18 @@ import java.util.ArrayList;
 
 import pl.guzooo.elevatorsimulation.system.ElevatorSystem;
 import pl.guzooo.elevatorsimulation.system.FactoryElevatorSystem;
-import pl.guzooo.elevatorsimulation.system.SimpleElevatorSystem;
 import pl.guzooo.elevatorsimulator.settings.SettingManager;
 
 public class SimulationViewModel extends AndroidViewModel {
 
     ElevatorSystem system;
     MutableLiveData<ArrayList<Integer[]>> status = new MutableLiveData<>();
+    MutableLiveData<Boolean> devView = new MutableLiveData<>();
 
     public SimulationViewModel(Application application) {
         super(application);
         reset();
+        devView.setValue(false);
     }
 
     public void reset(){
@@ -44,7 +45,15 @@ public class SimulationViewModel extends AndroidViewModel {
         status.setValue(system.status());
     }
 
-    public  MutableLiveData<ArrayList<Integer[]>> getStatus(){
+    public void switchDev(){
+        devView.setValue(!devView.getValue());
+    }
+
+    public MutableLiveData<ArrayList<Integer[]>> getStatus(){
         return status;
+    }
+
+    public MutableLiveData<Boolean> getDevView(){
+        return devView;
     }
 }

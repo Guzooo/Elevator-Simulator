@@ -25,7 +25,6 @@
             style="@style/TextTitle"/>
 
         <ImageView
-            android:visibility="invisible"
             android:id="@+id/dev_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -45,6 +44,33 @@
             app:layout_constraintStart_toStartOf="parent"
             style="@style/ButtonStandard"/>
 
+        <EditText
+            android:id="@+id/edit"
+            android:hint="Enter arguments - 305;10;5"
+            app:layout_constraintTop_toBottomOf="@id/reset_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/select"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/edit"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/update"
+            android:text="select floor"/>
+
+        <Button
+            android:id="@+id/update"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/edit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/select"
+            android:text="update"/>
+
         <TextView
             android:id="@+id/reset_info"
             android:layout_width="0dp"
@@ -57,15 +83,13 @@
             app:layout_constraintBottom_toBottomOf="@id/reset_button"/>
 
         <TextView
-            android:visibility="invisible"
             android:id="@+id/dev_info"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_standard"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/reset_button"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/update"
             style="@style/TextBold"/>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -75,9 +99,8 @@
             android:clipToPadding="false"
             android:layout_marginTop="@dimen/margin_standard"
             tools:listitem="@layout/card_view_floor"
-            app:layout_constraintTop_toBottomOf="@id/reset_button"
+            app:layout_constraintTop_toBottomOf="@id/update"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

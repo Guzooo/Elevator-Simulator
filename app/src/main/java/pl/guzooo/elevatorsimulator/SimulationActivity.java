@@ -12,7 +12,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import pl.guzooo.elevatorsimulator.adapter.FloorAdapter;
 import pl.guzooo.elevatorsimulator.fullscreen.AllInsetsAgent;
@@ -41,6 +45,7 @@ public class SimulationActivity extends AppCompatActivity {
         setReset();
         setDevInfo();
         setRecyclerView();
+        setButtons();
     }
 
     @Override
@@ -78,11 +83,20 @@ public class SimulationActivity extends AppCompatActivity {
         TextView tv = findViewById(R.id.version_text);
         String s = TextUtils.getVersion(this);
         tv.setText(s);
-
     }
 
     private void setDev(){
-        //View dev = findViewById(R.id.dev_image);
+        View dev = findViewById(R.id.dev_image);
+        dev.setOnClickListener(view -> viewModel.switchDev());
+        viewModel.getDevView().observe(this, isDevView -> {
+            if(isDevView){
+                devInfo.setVisibility(View.VISIBLE);
+                recyclerView.setVisibility(View.INVISIBLE);
+            } else {
+                devInfo.setVisibility(View.INVISIBLE);
+                recyclerView.setVisibility(View.VISIBLE);
+            }
+        });
     }
 
     private void setReset(){
@@ -106,12 +120,31 @@ public class SimulationActivity extends AppCompatActivity {
         FloorAdapter.FloorListener listener = getFloorListener();
         adapter = new FloorAdapter(SettingManager.getFirstFloor(this), SettingManager.getCountOfFloors(this), listener);
         viewModel.getStatus().observe(this, array -> {
-            adapter.submitList(array);
+            Integer[][] fake = new Integer[SettingManager.getCountOfFloors(this)][];
+            ArrayList<Integer[]> fakeA = new ArrayList<>(Arrays.asList(fake));
+            adapter.submitList(fakeA);
+            adapter.refreshElevators(array);
         });
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
+    }
+
+    private void setButtons(){
+        findViewById(R.id.update).setOnClickListener(view -> {
+            Integer[] arguments = getArgumentsFromEditText();
+            if(arguments.length < 3)
+                return;
+            viewModel.updateSystem(arguments[0], arguments[1], arguments[2]);
+        });
+        findViewById(R.id.select).setOnClickListener(view -> {
+            Integer[] arguments = getArgumentsFromEditText();
+            if(arguments.length < 2)
+                return;
+            viewModel.selectFloor(arguments[0], arguments[1]);
+
+        });
     }
 
     private void doStep(MenuItem item){
@@ -142,5 +175,15 @@ public class SimulationActivity extends AppCompatActivity {
                 //TODO: pokaż szczegoły windy
             }
         };
+    }
+
+    private Integer[] getArgumentsFromEditText(){
+        EditText editText = findViewById(R.id.edit);
+        String str = editText.getText().toString().trim();
+        String[] strs = str.split(";");
+        Integer[] integers = new Integer[strs.length];
+        for(int i = 0; i < strs.length; i++)
+            integers[i] = Integer.valueOf(strs[i]);
+        return integers;
     }
 }

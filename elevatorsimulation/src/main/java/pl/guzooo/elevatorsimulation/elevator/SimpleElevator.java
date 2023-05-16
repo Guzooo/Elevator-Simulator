@@ -75,8 +75,8 @@ public class SimpleElevator implements Elevator {
             stops.add(stop.getFloor());
             return true;
         } else if(stops.size() == 0){
-            changeDirection(stop.getDirection());
-            stops.add(stop.getFloor());
+            changeDirection(Integer.compare(stop.getDirection(), direction));
+            selectFloor(stop.getFloor());
             return true;
         }
         return false;
@@ -104,7 +104,7 @@ public class SimpleElevator implements Elevator {
         if(direction == 0)
             return;
         currentFloor += direction;
-        if(stops.first() == currentFloor) {
+        if(getNextFloor() == currentFloor) {
             stopover = STOPOVER;
             stops.pollFirst();
             tryTakingBreak();
