@@ -1,6 +1,7 @@
 package pl.guzooo.elevatorsimulation.elevator;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.TreeSet;
 
 import pl.guzooo.elevatorsimulation.stop.ComparatorFloorDownDirection;
@@ -17,7 +18,7 @@ public class SimpleElevator implements Elevator {
     private int id;
     private int currentFloor;
     private TreeSet<Integer> stops = new TreeSet<>();
-    private ArrayList<Integer> otherStops = new ArrayList<>();  //when someone requested a stop in the opposite direction.
+    private TreeSet<Integer> otherStops = new TreeSet<>();  //when someone requested a stop in the opposite direction.
     private int direction = 0;
     private int stopover = 0;
 
@@ -53,8 +54,11 @@ public class SimpleElevator implements Elevator {
             return timeTravel + stopoverTime;
         }
         int timeToDestination = getTimeToDestination();
-        int timeFromDestinationToFloor = getTimeBetweenFloors(getDestinationFloor(), stop.getFloor());
-        return timeToDestination + timeFromDestinationToFloor;
+        int timeFromDestinationToOther = getTimeBetweenFloors(getDestinationFloor(), getOtherDestinationFloor());
+        int otherStopoverTravel = otherStops.size() * STOPOVER;
+        int timeFromOtherToFloor = getTimeBetweenFloors(getOtherDestinationFloor(), stop.getFloor());
+        return timeToDestination + timeFromDestinationToOther
+                + otherStopoverTravel + timeFromOtherToFloor;
     }
 
     @Override
@@ -81,8 +85,13 @@ public class SimpleElevator implements Elevator {
     public void selectFloor(int floor) {
         if(isFloorOnTheWay(floor))
             stops.add(floor);
-        else
+        else if(otherStops.size() != 0)
             otherStops.add(floor);
+        else {
+            Comparator<Integer> comparator = getComparator(direction *-1);
+            otherStops = new TreeSet<>(comparator);
+            otherStops.add(floor);
+        }
     }
 
     @Override
@@ -104,7 +113,13 @@ public class SimpleElevator implements Elevator {
     private int getDestinationFloor(){
         if(stops.size() == 0 || direction == 0)
             return currentFloor;
-        return stops.first();
+        return stops.last();
+    }
+
+    private int getOtherDestinationFloor(){
+        if(otherStops.size() == 0)
+            return currentFloor;
+        return stops.last();
     }
 
     private int getTimeBetweenFloors(int first, int second){
@@ -140,9 +155,14 @@ public class SimpleElevator implements Elevator {
 
     private void changeDirection(int direction){
         this.direction = direction;
+        Comparator<Integer> comparator = getComparator(direction);
+        stops = new TreeSet<>(comparator);
+    }
+
+    private Comparator<Integer> getComparator(int direction){
         if(direction == 1)
-            stops = new TreeSet<>(new ComparatorFloorUpDirection());
+            return new ComparatorFloorUpDirection();
         else
-            stops = new TreeSet<>(new ComparatorFloorDownDirection());
+            return new ComparatorFloorDownDirection();
     }
 }
