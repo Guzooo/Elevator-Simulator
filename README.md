@@ -1,3 +1,12 @@
+!!! Uwaga !!!
+
+Po zainstalowaniu i pierwszym otworzeniu aplikacji należy włączyć ustawienia, następnie można wrócić do poprzedniego ekranu.
+
+trzy kropki w prawym górnym rogu >> Ustawienia
+
+!!!!!!!!!!!!!!
+
+
 # Elevator-Simulator
 
 Autor: Mikołaj Guz,                               Kurozwęki, 15.05.2023
